@@ -99,11 +99,11 @@ def euclidean_distance(vects):
 def siamese_architecture():
     input = keras.layers.Input((224, 224, 3))
     x = keras.layers.BatchNormalization()(input)
-    x = keras.layers.Conv2D(32, (7, 7), activation="tanh")(x)
+    x = keras.layers.Conv2D(64, (7, 7), activation="tanh")(x)
     x = keras.layers.AveragePooling2D(pool_size=(2, 2))(x)
     x = keras.layers.Conv2D(64, (7, 7), activation="tanh")(x)
     x = keras.layers.AveragePooling2D(pool_size=(2, 2))(x)
-    x = keras.layers.Conv2D(128, (7, 7), activation="tanh")(x)
+    x = keras.layers.Conv2D(64, (7, 7), activation="tanh")(x)
     x = keras.layers.AveragePooling2D(pool_size=(2, 2))(x)
 
     x = keras.layers.Flatten()(x)

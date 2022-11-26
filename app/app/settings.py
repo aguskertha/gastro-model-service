@@ -26,7 +26,7 @@ SECRET_KEY = '8y7=g#n8(eitg(xg1q7^uh+isoitvymvrud8$^d=ic3&$o&#fy'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '159.223.36.118', 'localhost', '127.0.0.1'
+    '188.166.253.81', 'localhost', '127.0.0.1'
 ]
 
 

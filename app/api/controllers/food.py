@@ -30,11 +30,11 @@ def multi_predict(request):
     imgArr1 = get_duplicate_array_image(imgQuery, len(images))
     imgArr2 = get_multi_array_image(images)
 
-    print(imgArr1.shape)
-    print(imgArr2.shape)
+    # print(imgArr1.shape)
+    # print(imgArr2.shape)
 
     result = siamese_model.predict([imgArr1,imgArr2])
-    print(result)
+    # print(result)
 
     return Response(result)
 
@@ -46,11 +46,11 @@ def predict(request):
 
     imgArr1 = get_array_image(request.data['image1'])
     imgArr2 = get_array_image(request.data['image2'])
-    print(imgArr1.shape)
-    print(imgArr2.shape)
+    # print(imgArr1.shape)
+    # print(imgArr2.shape)
     result = siamese_model.predict([imgArr1,imgArr2])
 
-    print(result)
+    # print(result)
 
     return Response({'predict':result[0][0]})
 

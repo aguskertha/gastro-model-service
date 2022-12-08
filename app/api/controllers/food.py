@@ -125,11 +125,14 @@ def siamese_architecture():
     input_1 = keras.layers.Input((224, 224, 3))
     input_2 = keras.layers.Input((224, 224, 3))
 
+    # As mentioned above, Siamese Network share weights between
+    # tower networks (sister networks). To allow this, we will use
+    # same embedding network for both tower networks.
     tower_1 = embedding_network(input_1)
     tower_2 = embedding_network(input_2)
 
     merge_layer = keras.layers.Lambda(euclidean_distance)([tower_1, tower_2])
-    normal_layer = keras.layers.BatchNormalization()(merge_layer)
+    normal_layer = tf.keras.layers.BatchNormalization()(merge_layer)
     output_layer = keras.layers.Dense(1, activation="sigmoid")(normal_layer)
     siamese = keras.Model(inputs=[input_1, input_2], outputs=output_layer)
     return siamese

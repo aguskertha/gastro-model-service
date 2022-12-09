@@ -101,7 +101,6 @@ def siamese_architecture():
     x = tf.keras.layers.BatchNormalization()(input)
     x = keras.layers.Conv2D(32, (3, 3), activation="tanh")(x)
     x = keras.layers.AveragePooling2D(pool_size=(2, 2), strides=(2, 2), padding='same')(x)
-    x = keras.layers.Dropout(0.8)(x) 
     x = keras.layers.Conv2D(32, (5, 5), activation="tanh")(x)
     x = keras.layers.AveragePooling2D(pool_size=(2, 2), strides=(2, 2), padding='same')(x)
     x = keras.layers.Dropout(0.5)(x) 
@@ -113,7 +112,7 @@ def siamese_architecture():
     x = keras.layers.Dropout(0.5)(x) 
     x = keras.layers.Conv2D(128, (7, 7), activation="tanh")(x)
     x = keras.layers.AveragePooling2D(pool_size=(2, 2), strides=(2, 2), padding='same')(x)
-    x = keras.layers.Dropout(0.5)(x) 
+    x = keras.layers.Dropout(0.5)(x)
 
     x = keras.layers.Flatten()(x)
 

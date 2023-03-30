@@ -10,6 +10,7 @@ from .controllers import food
 urlpatterns = [
     path('hello', food.hello),
     path('predict', food.predict),
+    path('predict-data', food.predict_with_data),
     path('multi-predict', food.multi_predict),
     path('file-upload', file_upload , name='file'),
     path('upload-architecture', upload_architecture ),

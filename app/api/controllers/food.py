@@ -38,7 +38,8 @@ def predict_with_data(request):
             images.append(picture)
             labels.append({
                 'name' : food['name'],
-                'foodCode' : food['foodCode']
+                'foodCode' : food['foodCode'],
+                '_id' : food['_id']
             })
 
     imgArr1 = get_duplicate_array_image(imgQuery, len(images))

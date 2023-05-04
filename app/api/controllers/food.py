@@ -34,13 +34,19 @@ def predict_with_data(request):
     labels = []
 
     for food in foods.json():
-        for picture in food['picture']:
-            images.append(picture)
-            labels.append({
-                'name' : food['name'],
-                'foodCode' : food['foodCode'],
-                '_id' : food['_id']
-            })
+        # for picture in food['picture']:
+        #     images.append(picture)
+        #     labels.append({
+        #         'name' : food['name'],
+        #         'foodCode' : food['foodCode'],
+        #         '_id' : food['_id']
+        #     })
+        images.append(food['picture'][0])
+        labels.append({
+            'name' : food['name'],
+            'foodCode' : food['foodCode'],
+            '_id' : food['_id']
+        })
 
     imgArr1 = get_duplicate_array_image(imgQuery, len(images))
     imgArr2 = get_multi_array_image_link(images)

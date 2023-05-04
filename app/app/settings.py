@@ -27,7 +27,7 @@ SECRET_KEY = '8y7=g#n8(eitg(xg1q7^uh+isoitvymvrud8$^d=ic3&$o&#fy'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '167.71.221.107', 'localhost', '127.0.0.1'
+    '167.71.221.107', 'localhost', '127.0.0.1', 'gapulo.tech'
 ]
 
 

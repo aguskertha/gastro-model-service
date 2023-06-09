@@ -4,7 +4,7 @@ from tensorflow.keras.applications import (
         vgg16,
         resnet50,
         ResNet50V2,
-        mobilenet,
+        MobileNet,
         inception_v3,
         InceptionResNetV2,
         ResNet152V2,
@@ -53,7 +53,7 @@ def siamese_architecture():
 
     input_1 = keras.layers.Input((224, 224, 3))
     input_2 = keras.layers.Input((224, 224, 3))
-    mobilenet_model = mobilenet(weights='imagenet')
+    mobilenet_model = MobileNet(weights='imagenet')
     tower_1 = mobilenet_model(input_1)
     tower_2 = mobilenet_model(input_2)
 
